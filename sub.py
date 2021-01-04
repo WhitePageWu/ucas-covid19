@@ -137,7 +137,7 @@ def submit(s: requests.Session, old: dict):
 
     if api_key != "":
         message(api_key, result.get('m'), new_daily)
-    if sender_email != "" and receiver_email != "":
+    if sender_email != "" and receiver_email != "" and result.get('m') != "操作成功":
         send_email(sender_email, sender_email_passwd, receiver_email, result.get('m'), new_daily)
 
 
